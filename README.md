@@ -1,3 +1,12 @@
+ClewCrypt notice
+================
+
+ClewCrypt is a generic name I used to fork the VeraCrypt, an outstanding replacement of the deceased TrueCrypt tool.
+
+It differs from original VeraCrypt only in supplying additional 'clew' options, to allow stehanography-like features to make locating actual encrypted volume harder.
+
+The original README.md from VeraCrypt primary repository follows.
+
 This archive contains the source code of VeraCrypt.
 It is based on original TrueCrypt 7.1a with security enhancements and modifications.
 
