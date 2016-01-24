@@ -3,11 +3,11 @@ ClewCrypt notice
 
 ClewCrypt is a generic name I used to fork the VeraCrypt, an outstanding replacement of the deceased TrueCrypt tool.
 
-It differs from original VeraCrypt only in supplying additional 'clew' options, to allow stehanography-like features to make locating actual encrypted volume harder.
+It differs from original ClewCrypt only in supplying additional 'clew' options, to allow steganography-like features to make locating actual encrypted volume harder.
 
 The original README.md from VeraCrypt primary repository follows.
 
-This archive contains the source code of VeraCrypt.
+This archive contains the source code of ClewCrypt.
 It is based on original TrueCrypt 7.1a with security enhancements and modifications.
 
 
@@ -19,7 +19,7 @@ agree to the license terms contained in the file 'License.txt', which is
 included in this archive.
 
 Note that the license specifies, for example, that a derived work must not be
-called 'TrueCrypt' or 'VeraCrypt'
+called 'TrueCrypt', 'VeraCrypt' or 'ClewCrypt'
 
 
 
@@ -27,13 +27,13 @@ Contents
 ========
 
 I. Windows  
-   Requirements for Building VeraCrypt for Windows  
-   Instructions for Building VeraCrypt for Windows  
-	Instructions for Signing and Packaging VeraCrypt for Windows
+   Requirements for Building ClewCrypt for Windows  
+   Instructions for Building ClewCrypt for Windows  
+	Instructions for Signing and Packaging ClewCrypt for Windows
 
 II. Linux and Mac OS X  
-    Requirements for Building VeraCrypt for Linux and Mac OS X  
-    Instructions for Building VeraCrypt for Linux and Mac OS X  
+    Requirements for Building ClewCrypt for Linux and Mac OS X  
+    Instructions for Building ClewCrypt for Linux and Mac OS X  
 	Mac OS X specifics
 	
 III. FreeBSD and OpenSolaris
@@ -49,7 +49,7 @@ VI. Further Information
 I. Windows
 ==========
 
-Requirements for Building VeraCrypt for Windows:
+Requirements for Building ClewCrypt for Windows:
 ------------------------------------------------
 
 - Microsoft Visual C++ 2008 SP1 (Professional Edition or compatible)
@@ -67,15 +67,15 @@ IMPORTANT:
 
 The 64-bit editions of Windows Vista and later versions of Windows, and in
 some cases (e.g. playback of HD DVD content) also the 32-bit editions, do not
-allow the VeraCrypt driver to run without an appropriate digital signature.
-Therefore, all .sys files in official VeraCrypt binary packages are digitally
+allow the ClewCrypt driver to run without an appropriate digital signature.
+Therefore, all .sys files in official ClewCrypt binary packages are digitally
 signed with the digital certificate of the IDRIX, which was
 issued by Thawte certification authority. At the end of each official .exe and
 .sys file, there are embedded digital signatures and all related certificates
 (i.e. all certificates in the relevant certification chain, such as the
 certification authority certificates, CA-MS cross-certificate, and the
 IDRIX certificate).  
-Keep this in mind if you compile VeraCrypt
+Keep this in mind if you compile ClewCrypt
 and compare your binaries with the official binaries. If your binaries are
 unsigned, the sizes of the official binaries will usually be approximately
 10 KB greater than sizes of your binaries (there may be further differences
@@ -84,7 +84,7 @@ or no service pack for Visual Studio, or different hotfixes for it, or if you
 use different versions of the required SDKs).
 
 
-Instructions for Building VeraCrypt for Windows:
+Instructions for Building ClewCrypt for Windows:
 ------------------------------------------------
 
 1) Create an environment variable 'MSVC16_ROOT' pointing to the folder 'MSVC15'
@@ -93,7 +93,7 @@ Instructions for Building VeraCrypt for Windows:
    Note: The 16-bit installer MSVC15\SETUP.EXE cannot be run on 64-bit Windows,
    but it is actually not necessary to run it. You only need to extract the
    folder 'MSVC15', which contains the 32-bit binaries required to build the
-   VeraCrypt Boot Loader.
+   ClewCrypt Boot Loader.
 
 2) If you have installed the Windows Driver Development Kit in another
    directory than '%SYSTEMDRIVE%\WinDDK', create an environment variable
@@ -103,22 +103,22 @@ Instructions for Building VeraCrypt for Windows:
    environment variable 'PKCS11_INC' pointing to the directory where
    the PKCS #11 header files are installed.
 
-4) Open the solution file 'VeraCrypt.sln' in Microsoft Visual Studio 2008.
+4) Open the solution file 'ClewCrypt.sln' in Microsoft Visual Studio 2008.
 
 5) Select 'All' as the active solution configuration.
 
 6) Build the solution.
 
-7) If successful, there should be newly built VeraCrypt binaries in the
+7) If successful, there should be newly built ClewCrypt binaries in the
    'Release' folder.
 
-Instructions for Signing and Packaging VeraCrypt for Windows:
+Instructions for Signing and Packaging ClewCrypt for Windows:
 -------------------------------------------------------------
 
 First, create an environment variable 'WSDK81' pointing to the Windows SDK
 for Windows 8.1 installation directory.
 The folder "Signing" contains a batch file (sign.bat) that will sign all 
-VeraCrypt components using a code signing certificate present on the 
+ClewCrypt components using a code signing certificate present on the 
 certificate store and also build the final installation setup.
 The batch file suppose that the code signing certificate is issued by Thawt.
 This is the case for IDRIX's certificate. If yours is issued by another CA, 
@@ -129,7 +129,7 @@ folder and then modify sign.bat accordingly.
 II. Linux and Mac OS X
 ======================
 
-Requirements for Building VeraCrypt for Linux and Mac OS X:
+Requirements for Building ClewCrypt for Linux and Mac OS X:
 -----------------------------------------------------------
 
 - GNU Make
@@ -148,13 +148,13 @@ Requirements for Building VeraCrypt for Linux and Mac OS X:
   it is possible to override it using the environment variable 'PKCS11_INC'. 
 
 
-Instructions for Building VeraCrypt for Linux and Mac OS X:
+Instructions for Building ClewCrypt for Linux and Mac OS X:
 -----------------------------------------------------------
 
-1) Change the current directory to the root of the VeraCrypt source code.
+1) Change the current directory to the root of the ClewCrypt source code.
 
 2) If you have no wxWidgets shared library installed, run the following
-   command to configure the wxWidgets static library for VeraCrypt and to
+   command to configure the wxWidgets static library for ClewCrypt and to
    build it: 
 
    $ make WXSTATIC=1 WX_ROOT=/usr/src/wxWidgets wxbuild
@@ -163,7 +163,7 @@ Instructions for Building VeraCrypt for Linux and Mac OS X:
    wxWidgets library. Output files will be placed in the './wxrelease/'
    directory.
 
-3) To build VeraCrypt, run the following command:
+3) To build ClewCrypt, run the following command:
 
    $ make
 
@@ -171,7 +171,7 @@ Instructions for Building VeraCrypt for Linux and Mac OS X:
    
    $ make WXSTATIC=1
 
-4) If successful, the VeraCrypt executable should be located in the directory
+4) If successful, the ClewCrypt executable should be located in the directory
    'Main'.
 
 By default, a universal executable supporting both graphical and text user
@@ -204,10 +204,10 @@ compile using the following commands :
 After making sure pkg-config is available, download and install OSXFuse from
 https://osxfuse.github.io/ (MacFUSE compatibility layer must selected)
 
-The script build_veracrypt_macosx.sh available under "src/Build" performs the 
-full build of VeraCrypt including the creation of the installer pkg. It expects
+The script build_ClewCrypt_macosx.sh available under "src/Build" performs the 
+full build of ClewCrypt including the creation of the installer pkg. It expects
 to find the wxWidgets 3.0.2 sources at the same level as where you put 
-VeraCrypt sources (i.e. if "src" path is "/Users/joe/Projects/VeraCrypt/src"
+ClewCrypt sources (i.e. if "src" path is "/Users/joe/Projects/ClewCrypt/src"
 then wxWidgets should be at "/Users/joe/Projects/wxWidgets-wxWidgets-3.0.2")
 
 The build process uses Code Signing certificates whose ID is specified in
@@ -215,8 +215,8 @@ src/Main/Main.make (lines 167 & 169). You'll have to modify these lines to put
 the ID of your Code Signing certificates or comment them if you don't have one.
 
 Because of incompatibility issues with OSXFUSE, the SDK 10.9 generates a
-VeraCrypt binary that has issues communicating with the OSXFUSE kernel extension.
-Thus, we recommend to use the SDK 10.8 or earlier for building VeraCrypt.
+ClewCrypt binary that has issues communicating with the OSXFUSE kernel extension.
+Thus, we recommend to use the SDK 10.8 or earlier for building ClewCrypt.
 
 
 
@@ -248,7 +248,7 @@ V. Legal Information
 Copyright Information
 ---------------------
 
-This software as a whole:
+VeraCrypt software as a whole:
 Copyright (c) 2013-2015 IDRIX. All rights reserved.
 
 Portions of this software:
@@ -270,4 +270,4 @@ documentation, are the sole property of their respective owners.
 VI. Further Information
 =======================
 
-http://www.veracrypt.fr
+VeraCrypt main page: http://www.veracrypt.fr
